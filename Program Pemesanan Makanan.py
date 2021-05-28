@@ -231,3 +231,161 @@ def makanan():
     print("Total Harga Makanan : ", sum(list_total_makanan))
     print()
 makanan()
+
+def minuman():
+    global list_minuman
+    global list_jumlah_minuman
+    global list_total_minuman
+    list_minuman = []
+    list_jumlah_minuman = []
+    list_total_minuman = []
+    n = "baka"
+    print("""
+    ==================MENU MINUMAN==================
+    1.	Squash delight      =   Rp 15.000
+    2.	Blue ocean          =   Rp 15.000
+    3.	Orange soda         =   Rp 15.000
+    4.	Yakult mojito       =   Rp 17.000
+    5.	Fruit punch         =   Rp 17.000
+    6.	Strawberry mojito   =   Rp 17.000
+    7.	Fizzy drink         =   Rp 15.000
+    8.	Lemon float         =   Rp 17.000
+    9.	Melon soda float    =   Rp 18.000
+    10.	Mango float         =   Rp 18.000
+    Tekan ENTER untuk lanjut ke menu selanjutnya
+    """)
+    while n != 6:
+        print("Pilih Menu Minuman (1-10)")
+        x = input(">> ")
+        if x == "1":
+            jenis = "Squash delight"
+            harga = "Rp 15.000"
+            print(jenis)
+            print(harga)
+            jumlah = int(input("Jumlah : "))
+            list_minuman.append(jenis)
+            list_jumlah_minuman.append(jumlah)
+            total_minuman = 15000 * jumlah
+            list_total_minuman.append(total_minuman)
+            print("Total harga : ", total_minuman)
+            print()
+        elif x == "2":
+            jenis = "Blue ocean"
+            harga = "Rp 15.000"
+            print(jenis)
+            print(harga)
+            jumlah = int(input("Jumlah : "))
+            list_minuman.append(jenis)
+            list_jumlah_minuman.append(jumlah)
+            total_minuman = 15000 * jumlah
+            list_total_minuman.append(total_minuman)
+            print("Total harga : ", total_minuman)
+            print()
+        elif x == "3":
+            jenis = "Orange soda"
+            harga = "Rp 15.000"
+            print(jenis)
+            print(harga)
+            jumlah = int(input("Jumlah : "))
+            list_minuman.append(jenis)
+            list_jumlah_minuman.append(jumlah)
+            total_minuman = 15000 * jumlah
+            list_total_minuman.append(total_minuman)
+            print("Total harga : ", total_minuman)
+            print()
+        elif x == "4":
+            jenis = "Yakult mojito"
+            harga = "Rp 17.000"
+            print(jenis)
+            print(harga)
+            jumlah = int(input("Jumlah : "))
+            list_minuman.append(jenis)
+            list_jumlah_minuman.append(jumlah)
+            total_minuman = 17000 * jumlah
+            list_total_minuman.append(total_minuman)
+            print("Total harga : ", total_minuman)
+            print()
+        elif x == "5":
+            jenis = "Fruit punch"
+            harga = "Rp 17.000"
+            print(jenis)
+            print(harga)
+            jumlah = int(input("Jumlah : "))
+            list_minuman.append(jenis)
+            list_jumlah_minuman.append(jumlah)
+            total_minuman = 17000 * jumlah
+            list_total_minuman.append(total_minuman)
+            print("Total harga : ", total_minuman)
+            print()
+        elif x == "6":
+            jenis = "Strawberry mojito"
+            harga = "Rp 17.000"
+            print(jenis)
+            print(harga)
+            jumlah = int(input("Jumlah : "))
+            list_minuman.append(jenis)
+            list_jumlah_minuman.append(jumlah)
+            total_minuman = 17000 * jumlah
+            list_total_minuman.append(total_minuman)
+            print("Total harga : ", total_minuman)
+            print()
+        elif x == "7":
+            jenis = "Fizzy drink"
+            harga = "Rp 15.000"
+            print(jenis)
+            print(harga)
+            jumlah = int(input("Jumlah : "))
+            list_minuman.append(jenis)
+            list_jumlah_minuman.append(jumlah)
+            total_minuman = 15000 * jumlah
+            list_total_minuman.append(total_minuman)
+            print("Total harga : ", total_minuman)
+            print()
+        elif x == "8":
+            jenis = "Lemon float"
+            harga = "Rp 17.000"
+            print(jenis)
+            print(harga)
+            jumlah = int(input("Jumlah : "))
+            list_minuman.append(jenis)
+            list_jumlah_minuman.append(jumlah)
+            total_minuman = 17000 * jumlah
+            list_total_minuman.append(total_minuman)
+            print("Total harga : ", total_minuman)
+            print()
+        elif x == "9":
+            jenis = "Melon soda float"
+            harga = "Rp 18.000"
+            print(jenis)
+            print(harga)
+            jumlah = int(input("Jumlah : "))
+            list_minuman.append(jenis)
+            list_jumlah_minuman.append(jumlah)
+            total_minuman = 18000 * jumlah
+            list_total_minuman.append(total_minuman)
+            print("Total harga : ", total_minuman)
+            print()
+        elif x == "10":
+            jenis = "Mango float"
+            harga = "Rp 18.000"
+            print(jenis)
+            print(harga)
+            jumlah = int(input("Jumlah : "))
+            list_minuman.append(jenis)
+            list_jumlah_minuman.append(jumlah)
+            total_minuman = 18000 * jumlah
+            list_total_minuman.append(total_minuman)
+            print("Total harga : ", total_minuman)
+            print()
+        elif x == "":
+            print("Mohon Tunggu ...")
+            print()
+            n = 6
+        else:
+            print("TIDAK VALID. SILAHKAN COBA LAGI.")
+            print()
+            minuman()
+            sys.exit()
+    print("Total Harga Minuman : ", sum(list_total_minuman))
+    print()
+minuman()
