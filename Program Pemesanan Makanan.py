@@ -460,3 +460,73 @@ def delivery():
     else:
         print("TIDAK VALID. SILAHKAN COBA LAGI.")
         delivery()
+
+def menu_2():
+    global menu
+    global pesanan
+    print("""
+=====Silakan Pilih Menu=====
+1. Dine In
+2. Take Away
+3. Delivery (Khusus Kota Solo)
+""")
+    menu = "baka"
+    while menu != "s":
+        menu = input(">> ")
+        print()
+        if menu == "1" or menu == "2" or menu == "3":
+            if menu == "1":
+                pesanan = "1"
+                menu = "s"
+                dine_in()
+            elif menu == "2":
+                take_away()
+                pesanan = "2"
+                menu = "s"
+            elif menu == "3":
+                pesanan = "3"
+                menu = "s"
+                delivery()
+        else:
+            print("TIDAK VALID. SILAHKAN COBA LAGI.")
+            sys.exit()
+menu_2()
+
+def total_bayar():
+    total_bayar = total_harga + ongkos_kirim
+    print("Total yang harus dibayarkan : ", total_bayar)
+
+total_bayar()
+
+def cashless():
+    global no_rekening
+    print("Masukkan Nomor Rekening")
+    no_rekening = int(input(">> "))
+
+def cash():
+    print("Anda memilih pembayaran cash")
+
+def pembayaran():
+    global bayar
+    print("""
+    =================MENU PEMBAYARAN=================
+    1.	Cash
+    2.	Cashless
+    """)
+    bayar = "baka"
+    while bayar != "s":
+        bayar = input(">> ")
+        print()
+        if bayar == "1" or bayar == "2" or bayar == "3":
+            if bayar == "1":
+                bayar = "s"
+                cash()
+            elif bayar == "2":
+                bayar = "s"
+                cashless()
+        else:
+            print("TIDAK VALID. SILAHKAN COBA LAGI.")
+            pembayaran()
+            sys.exit()
+
+pembayaran()
