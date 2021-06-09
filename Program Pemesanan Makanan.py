@@ -389,3 +389,74 @@ def minuman():
     print("Total Harga Minuman : ", sum(list_total_minuman))
     print()
 minuman()
+
+def total_sementara():
+    global total_harga
+    print("Pesanan Anda")
+    total_harga = sum(list_total_makanan) + sum(list_total_minuman)
+    print("Total Harga : Rp", total_harga)
+
+total_sementara()
+
+def cek_pesanan():
+    print("Apakah anda sudah yakin (Y/N)")
+    cek = input(">> ")
+    if cek == "Y":
+        print("")
+    else:
+        makanan()
+        minuman()
+        total_sementara()
+        cek_pesanan()
+
+cek_pesanan()
+
+def dine_in():
+    global nama_pemesan
+    global no_meja
+    global ongkos_kirim
+    print("Anda memilih Dine In")
+    nama_pemesan = input("Nama : ")
+    no_meja = random.randint(1, 20)
+    ongkos_kirim = 0
+    print("No Meja : ", no_meja)
+
+def take_away():
+    global nama_pengambil
+    global no_antrian
+    global ongkos_kirim
+    print("Anda memilih Take Away")
+    nama_pengambil = input("Nama Pengambil : ")
+    no_antrian = random.randint(1, 30)
+    ongkos_kirim = 0
+    print("No Antrian : ", no_antrian)
+
+def delivery():
+    global nama_penerima
+    global no_telfon
+    global alamat
+    global kecamatan
+    global ongkos_kirim
+    print("Anda memilih Delivery (Khusus Kota Solo)")
+    nama_penerima = input("Nama Penerima : ")
+    no_telfon = int(input("No Telfon : "))
+    alamat = input("Alamat : ")
+    kecamatan = input("Kecamatan : ")
+    if kecamatan == "Laweyan":
+        ongkos_kirim = 6000
+        print("Total Ongkos Kirim : ", ongkos_kirim)
+    elif kecamatan == "Pasar Kliwon":
+        ongkos_kirim = 7000
+        print("Total Ongkos Kirim : ", ongkos_kirim)
+    elif kecamatan == "Jebres":
+        ongkos_kirim = 8000
+        print("Total Ongkos Kirim : ", ongkos_kirim)
+    elif kecamatan == "Banjarsari":
+        ongkos_kirim = 9000
+        print("Total Ongkos Kirim : ", ongkos_kirim)
+    elif kecamatan == "Serengan":
+        ongkos_kirim = 10000
+        print("Total Ongkos Kirim : ", ongkos_kirim)
+    else:
+        print("TIDAK VALID. SILAHKAN COBA LAGI.")
+        delivery()
