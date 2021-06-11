@@ -530,3 +530,57 @@ def pembayaran():
             sys.exit()
 
 pembayaran()
+
+def detail_pembelian():
+    print()
+    print("Detail Pembelian :")
+    print()
+    if pesanan == "1":
+        t = time.localtime()
+        jam_sekarang = time.strftime("%H:%M:%S", t)
+        print("Tanggal pesan  : ", datetime.date.today())
+        print("Jam pesan      : ", jam_sekarang)
+        print("Nama           : ", nama_pemesan)
+        print("No meja        : ", no_meja)
+    elif pesanan == "2":
+        t = time.localtime()
+        jam_sekarang = time.strftime("%H:%M:%S", t)
+        print("Tanggal pesan  : ", datetime.date.today())
+        print("Jam pesan      : ", jam_sekarang)
+        print("Nama           : ", nama_pengambil)
+        print("No antrian     : ", no_antrian)
+    else:
+        t = time.localtime()
+        jam_sekarang = time.strftime("%H:%M:%S", t)
+        print("Tanggal pesan  : ", datetime.date.today())
+        print("Jam pesan      : ", jam_sekarang)
+        print("Nama           : ", nama_penerima)
+        print("Alamat         : ", alamat)
+        print("Ongkos Kirim   :  Rp ", ongkos_kirim)
+    print()
+
+detail_pembelian()
+
+def detail_pesanan():
+    print("Pesanan :")
+    print("Makanan              : ", list_makanan)
+    print("Jumlah               : ", list_jumlah_makanan)
+    print("Harga Makanan        : ", list_total_makanan)
+    print("Total Harga Makanan  :  Rp ", sum(list_total_makanan))
+    print("Minuman              : ", list_minuman)
+    print("Jumlah               : ", list_jumlah_minuman)
+    print("Harga Minuman        : ", list_total_minuman)
+    print("Total Harga Minuman  :  Rp ", sum(list_total_minuman))
+    print("Total                :  Rp ", sum(list_total_makanan) + sum(list_total_minuman) + ongkos_kirim)
+    print()
+
+detail_pesanan()
+
+def cek():
+    if bayar == "1":
+        print("Pembayaran : Cash")
+        print()
+    elif bayar == "2":
+        print("Pembayaran : Cashless")
+
+cek()
