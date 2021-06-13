@@ -1,4 +1,7 @@
+import datetime
+import time
 import sys
+import random
 
 def menuawal():
     print("""
