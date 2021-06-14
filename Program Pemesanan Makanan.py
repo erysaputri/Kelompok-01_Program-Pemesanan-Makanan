@@ -639,5 +639,5 @@ pembayaran()
 
 def menu_akhir():
     print()
-    print("Terima kasih")
+    print("Terima kasih telah memesan di restoran kami. Pesanan Anda sedang kami proses.")
 menu_akhir()
