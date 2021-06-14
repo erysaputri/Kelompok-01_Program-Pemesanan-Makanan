@@ -15,7 +15,6 @@
 ### OS apapun asalkan memiliki IDE Python
 ### Library date time
 ### Library time
-### Library sys
 ### Library random
 ## Penjelasan Singkat Program
 ### 1. Memulai program
