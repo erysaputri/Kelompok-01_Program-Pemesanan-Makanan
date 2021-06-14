@@ -615,7 +615,7 @@ def pembayaran():
 
     1.	Cash
     2.	DANA
-    3.  Transfer
+    3.  Transfer Bank
     """)
     bayar = "baka"
     while bayar != "s":
