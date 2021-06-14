@@ -1,6 +1,5 @@
 import datetime
 import time
-import sys
 import random
 
 def menuawal():
@@ -20,7 +19,7 @@ def makanan():
     list_total_makanan = []
     n = "baka"
     print("""
-    ==================MENU MAKANAN==================
+====================MENU MAKANAN====================
 
     1.  Fettucinne Carbonara            :  Rp 35.000
     2.  Lasagna                         :  Rp 10.000
@@ -230,7 +229,6 @@ def makanan():
             print("TIDAK VALID. SILAHKAN COBA LAGI.")
             print()
             makanan()
-            sys.exit()
     print("Total Harga Makanan : ", sum(list_total_makanan))
     print()
 makanan()
@@ -244,17 +242,17 @@ def minuman():
     list_total_minuman = []
     n = "baka"
     print("""
-    ==================MENU MINUMAN==================
-    1.	Squash delight      =   Rp 15.000
-    2.	Blue ocean          =   Rp 15.000
-    3.	Orange soda         =   Rp 15.000
-    4.	Yakult mojito       =   Rp 17.000
-    5.	Fruit punch         =   Rp 17.000
-    6.	Strawberry mojito   =   Rp 17.000
-    7.	Fizzy drink         =   Rp 15.000
-    8.	Lemon float         =   Rp 17.000
-    9.	Melon soda float    =   Rp 18.000
-    10.	Mango float         =   Rp 18.000
+==================MENU MINUMAN==================
+    1.	Squash delight      :   Rp 15.000
+    2.	Blue ocean          :   Rp 15.000
+    3.	Orange soda         :   Rp 15.000
+    4.	Yakult mojito       :   Rp 17.000
+    5.	Fruit punch         :   Rp 17.000
+    6.	Strawberry mojito   :   Rp 17.000
+    7.	Fizzy drink         :   Rp 15.000
+    8.	Lemon float         :   Rp 17.000
+    9.	Melon soda float    :   Rp 18.000
+    10.	Mango float         :   Rp 18.000
     Tekan ENTER untuk lanjut ke menu selanjutnya
     """)
     while n != 6:
@@ -388,28 +386,32 @@ def minuman():
             print("TIDAK VALID. SILAHKAN COBA LAGI.")
             print()
             minuman()
-            sys.exit()
     print("Total Harga Minuman : ", sum(list_total_minuman))
     print()
+
 minuman()
 
 def total_sementara():
     global total_harga
-    print("Pesanan Anda")
     total_harga = sum(list_total_makanan) + sum(list_total_minuman)
     print("Total Harga : Rp", total_harga)
 
 total_sementara()
 
 def cek_pesanan():
+    print()
     print("Apakah anda sudah yakin (Y/N)")
     cek = input(">> ")
     if cek == "Y":
-        print("")
-    else:
+        print()
+        print("Mohon Tunggu ...")
+    elif cek == "N":
         makanan()
         minuman()
         total_sementara()
+        cek_pesanan()
+    else:
+        print("TIDAK VALID. SILAHKAN COBA LAGI.")
         cek_pesanan()
 
 cek_pesanan()
@@ -468,7 +470,8 @@ def menu_2():
     global menu
     global pesanan
     print("""
-=====Silakan Pilih Menu=====
+===============MENU PILIHAN===============
+
 1. Dine In
 2. Take Away
 3. Delivery (Khusus Kota Solo)
@@ -492,47 +495,15 @@ def menu_2():
                 delivery()
         else:
             print("TIDAK VALID. SILAHKAN COBA LAGI.")
-            sys.exit()
+            menu_2()
 menu_2()
 
 def total_bayar():
+    global total_bayar
     total_bayar = total_harga + ongkos_kirim
     print("Total yang harus dibayarkan : ", total_bayar)
 
 total_bayar()
-
-def cashless():
-    global no_rekening
-    print("Masukkan Nomor Rekening")
-    no_rekening = int(input(">> "))
-
-def cash():
-    print("Anda memilih pembayaran cash")
-
-def pembayaran():
-    global bayar
-    print("""
-    =================MENU PEMBAYARAN=================
-    1.	Cash
-    2.	Cashless
-    """)
-    bayar = "baka"
-    while bayar != "s":
-        bayar = input(">> ")
-        print()
-        if bayar == "1" or bayar == "2" or bayar == "3":
-            if bayar == "1":
-                bayar = "s"
-                cash()
-            elif bayar == "2":
-                bayar = "s"
-                cashless()
-        else:
-            print("TIDAK VALID. SILAHKAN COBA LAGI.")
-            pembayaran()
-            sys.exit()
-
-pembayaran()
 
 def detail_pembelian():
     print()
@@ -552,6 +523,7 @@ def detail_pembelian():
         print("Jam pesan      : ", jam_sekarang)
         print("Nama           : ", nama_pengambil)
         print("No antrian     : ", no_antrian)
+        print("Note           :  Pesanan dapat diambil setelah 30 menit")
     else:
         t = time.localtime()
         jam_sekarang = time.strftime("%H:%M:%S", t)
@@ -580,10 +552,92 @@ def detail_pesanan():
 detail_pesanan()
 
 def cek():
-    if bayar == "1":
-        print("Pembayaran : Cash")
-        print()
-    elif bayar == "2":
-        print("Pembayaran : Cashless")
-
+    print("Apakah anda sudah yakin? (Y/N)")
+    yakin = input(">> ")
+    print()
+    if yakin == "Y":
+        print("Mohon Tunggu ...")
+    elif yakin == "N":
+        makanan()
+        minuman()
+        total_sementara()
+        cek_pesanan()
+        menu_2()
+        total_bayar()
+        detail_pembelian()
+        detail_pesanan()
+        cek()
+    else:
+        print("TIDAK VALID. SILAHKAN COBA LAGI.")
+        cek()
 cek()
+
+def cashless():
+    global no_dana
+    print("Masukkan Nomor DANA")
+    no_dana = int(input(">> "))
+    print("Total Pembayaran : Rp", total_bayar)
+    print()
+    print("Apakah anda yakin ingin melanjutkan? (Y/N)")
+    cek_cashless = input(">> ")
+    print()
+    if cek_cashless == "N":
+        cashless()
+    else:
+        print("Pembayaran Telah Terkonfirmasi")
+
+def cash():
+    print("Anda memilih pembayaran cash")
+
+def rekening():
+    print("Silahkan Melakukan Transfer ke Rekening 741248083624 a.n. Bastian Arya\n")
+    print("Apakah anda sudah melakukan pembayaran? (Y/N)")
+    cek_rekening = input(">> ")
+    if cek_rekening == "Y":
+        t = 10
+        while t:
+            mins, secs = divmod(t, 60)
+            timer = '{:02d}:{:02d}'.format(mins, secs)
+            print(timer, end="\r")
+            time.sleep(1)
+            t -= 1
+        print()
+        print("Pembayaran Telah Terkonfirmasi")
+    elif cek_rekening == "N":
+        rekening()
+    else:
+        print("TIDAK VALID. SILAHKAN COBA LAGI.")
+
+def pembayaran():
+    global bayar
+    print("""
+================MENU PEMBAYARAN================
+
+    1.	Cash
+    2.	DANA
+    3.  Transfer
+    """)
+    bayar = "baka"
+    while bayar != "s":
+        bayar = input(">> ")
+        print()
+        if bayar == "1" or bayar == "2" or bayar == "3":
+            if bayar == "1":
+                bayar = "s"
+                cash()
+            elif bayar == "2":
+                bayar = "s"
+                cashless()
+            elif bayar == "3":
+                bayar = "s"
+                rekening()
+        else:
+            print("TIDAK VALID. SILAHKAN COBA LAGI.")
+            pembayaran()
+
+pembayaran()
+
+def menu_akhir():
+    print()
+    print("Terima kasih")
+menu_akhir()

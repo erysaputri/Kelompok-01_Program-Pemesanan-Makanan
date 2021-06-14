@@ -2,7 +2,7 @@
 ## Tugas Besar Praktikum Program Komputer 2021 Kelas A Kelompok 01
 ## Program ini dibuat untuk memudahkan pihak restoran dalam merekap daftar pesanan serta customer dalam memesan makanan dari restoran
 # Repository
-## Berkas "01_Diagram Alir.pdf"
+## Berkas "01_Flowchart.pdf"
 ### Merupakan lampiran berupa diagram alir yang menjelaskan cara kerja program
 ## Berkas "Program Pemesanan Makanan.py"
 ### merupakan file program pemesanan makanan
@@ -12,6 +12,7 @@
 ### merupakan penjelasan singkat isi dari repository
 ## System Requirement
 ### Python v3
+### OS apapun asalkan memiliki IDE Python
 ### Library date time
 ### Library time
 ### Library sys
