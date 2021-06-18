@@ -2,13 +2,17 @@ import datetime
 import time
 import random
 
+
 def menuawal():
     print("""
     ================SELAMAT DATANG==================
                       L'appetito
     Jl Kebangkitan No. 49, Kec. Laweyan, Kota Surakarta
                   Telp. (0271) 844425""")
+
+
 menuawal()
+
 
 def makanan():
     global list_makanan
@@ -40,12 +44,14 @@ def makanan():
     """)
     while n != 6:
         print("Pilih Menu Makanan (1-15)")
+        # Pengguna menginput nomor menu makanan yang dipesan
         x = input(">> ")
         if x == "1":
             jenis = "Fettucinne Carbonara"
             harga = "Rp 35.000"
             print(jenis)
             print(harga)
+            # Pengguna menginput jumlah makanan yang di pesan
             jumlah = int(input("Jumlah : "))
             list_makanan.append(jenis)
             list_jumlah_makanan.append(jumlah)
@@ -231,7 +237,10 @@ def makanan():
             makanan()
     print("Total Harga Makanan : ", sum(list_total_makanan))
     print()
+
+
 makanan()
+
 
 def minuman():
     global list_minuman
@@ -257,12 +266,14 @@ def minuman():
     """)
     while n != 6:
         print("Pilih Menu Minuman (1-10)")
+        # Pengguna menginput menu minuman yang dipesan
         x = input(">> ")
         if x == "1":
             jenis = "Squash delight"
             harga = "Rp 15.000"
             print(jenis)
             print(harga)
+            # Pengguna menginput jumlah minuman yang dipesan
             jumlah = int(input("Jumlah : "))
             list_minuman.append(jenis)
             list_jumlah_minuman.append(jumlah)
@@ -389,23 +400,28 @@ def minuman():
     print("Total Harga Minuman : ", sum(list_total_minuman))
     print()
 
+
 minuman()
+
 
 def total_sementara():
     global total_harga
     total_harga = sum(list_total_makanan) + sum(list_total_minuman)
     print("Total Harga : Rp", total_harga)
 
+
 total_sementara()
+
 
 def cek_pesanan():
     print()
     print("Apakah anda sudah yakin (Y/N)")
-    cek = input(">> ")
-    if cek == "Y":
+    # Pengguna menginput Y jika sudah yakin dengan pesan dan N jika belum yakin
+    cek1 = input(">> ")
+    if cek1 == "Y":
         print()
         print("Mohon Tunggu ...")
-    elif cek == "N":
+    elif cek1 == "N":
         makanan()
         minuman()
         total_sementara()
@@ -414,27 +430,33 @@ def cek_pesanan():
         print("TIDAK VALID. SILAHKAN COBA LAGI.")
         cek_pesanan()
 
+
 cek_pesanan()
+
 
 def dine_in():
     global nama_pemesan
     global no_meja
     global ongkos_kirim
     print("Anda memilih Dine In")
+    # Pengguna menginput nama pembeli
     nama_pemesan = input("Nama : ")
     no_meja = random.randint(1, 20)
     ongkos_kirim = 0
     print("No Meja : ", no_meja)
+
 
 def take_away():
     global nama_pengambil
     global no_antrian
     global ongkos_kirim
     print("Anda memilih Take Away")
+    # Pengguna menginput nama pengambil pesanan
     nama_pengambil = input("Nama Pengambil : ")
     no_antrian = random.randint(1, 30)
     ongkos_kirim = 0
     print("No Antrian : ", no_antrian)
+
 
 def delivery():
     global nama_penerima
@@ -443,6 +465,7 @@ def delivery():
     global kecamatan
     global ongkos_kirim
     print("Anda memilih Delivery (Khusus Kota Solo)")
+    # Pengguna menginput identitas
     nama_penerima = input("Nama Penerima : ")
     no_telfon = int(input("No Telfon : "))
     alamat = input("Alamat : ")
@@ -466,6 +489,7 @@ def delivery():
         print("TIDAK VALID. SILAHKAN COBA LAGI.")
         delivery()
 
+
 def menu_2():
     global menu
     global pesanan
@@ -478,6 +502,7 @@ def menu_2():
 """)
     menu = "baka"
     while menu != "s":
+        # Pengguna menginput menu pilihan sesuai keinginan
         menu = input(">> ")
         print()
         if menu == "1" or menu == "2" or menu == "3":
@@ -496,14 +521,19 @@ def menu_2():
         else:
             print("TIDAK VALID. SILAHKAN COBA LAGI.")
             menu_2()
+
+
 menu_2()
+
 
 def total_bayar():
     global total_bayar
     total_bayar = total_harga + ongkos_kirim
     print("Total yang harus dibayarkan : ", total_bayar)
 
+
 total_bayar()
+
 
 def detail_pembelian():
     print()
@@ -534,7 +564,9 @@ def detail_pembelian():
         print("Ongkos Kirim   :  Rp ", ongkos_kirim)
     print()
 
+
 detail_pembelian()
+
 
 def detail_pesanan():
     print("Pesanan :")
@@ -549,10 +581,13 @@ def detail_pesanan():
     print("Total                :  Rp ", sum(list_total_makanan) + sum(list_total_minuman) + ongkos_kirim)
     print()
 
+
 detail_pesanan()
+
 
 def cek():
     print("Apakah anda sudah yakin? (Y/N)")
+    # Memastikan pelanggan sudah yakin dengan pesanan
     yakin = input(">> ")
     print()
     if yakin == "Y":
@@ -570,11 +605,15 @@ def cek():
     else:
         print("TIDAK VALID. SILAHKAN COBA LAGI.")
         cek()
+
+
 cek()
+
 
 def cashless():
     global no_dana
     print("Masukkan Nomor DANA")
+    # Pengguna menginput nomer akun DANA
     no_dana = int(input(">> "))
     print("Total Pembayaran : Rp", total_bayar)
     print()
@@ -586,15 +625,18 @@ def cashless():
     else:
         print("Pembayaran Telah Terkonfirmasi")
 
+
 def cash():
     print("Anda memilih pembayaran cash")
+
 
 def rekening():
     print("Silahkan Melakukan Transfer ke Rekening 741248083624 a.n. Bastian Arya\n")
     print("Apakah anda sudah melakukan pembayaran? (Y/N)")
     cek_rekening = input(">> ")
+    # Mengkonfirmasi bahwa pelanggan sudah transfer
     if cek_rekening == "Y":
-        t = 10
+        t = 5
         while t:
             mins, secs = divmod(t, 60)
             timer = '{:02d}:{:02d}'.format(mins, secs)
@@ -608,6 +650,7 @@ def rekening():
     else:
         print("TIDAK VALID. SILAHKAN COBA LAGI.")
 
+
 def pembayaran():
     global bayar
     print("""
@@ -619,6 +662,7 @@ def pembayaran():
     """)
     bayar = "baka"
     while bayar != "s":
+        # Pengguna menginput metode pembayaran
         bayar = input(">> ")
         print()
         if bayar == "1" or bayar == "2" or bayar == "3":
@@ -635,9 +679,13 @@ def pembayaran():
             print("TIDAK VALID. SILAHKAN COBA LAGI.")
             pembayaran()
 
+
 pembayaran()
+
 
 def menu_akhir():
     print()
     print("Terima kasih telah memesan di restoran kami. Pesanan Anda sedang kami proses.")
+
+
 menu_akhir()

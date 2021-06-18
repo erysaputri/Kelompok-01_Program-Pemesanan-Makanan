@@ -4,6 +4,8 @@
 # Repository
 ## Berkas "01_Flowchart.pdf"
 ### Merupakan lampiran berupa diagram alir yang menjelaskan cara kerja program
+## Berkas "01_Presentasi Tugas Besar.pdf"
+### Merupakan file presentasi
 ## Berkas "Program Pemesanan Makanan.py"
 ### merupakan file program pemesanan makanan
 ## Berkas "01_ADITYA_TUBES_TAHAP_1.pdf"
@@ -25,8 +27,8 @@
 ### 6. Jika customer memilih fitur dine in, diharuskan mengisi nama, kemudian sebagai hasilnya program akan menampilkan nomor meja
 ### 7. Jika customer memilih fitur take away, diharuskan mengisi nama, kemudian sebagai hasilnya program akan menampilkan nomor antrian
 ### 8. Jika customer memilih fitur delivery, diharuskan mengisi nama, nomor telfon, alamat, dan kecamatan tempat tujuan, kemudian sebagai hasilnya program akan menampilkan biaya ongkos kirim
-### 9. Menampilkan total yang harus dibayarkan
-### 10. Memilih metode pembayaran antara cash dan cashless
-### 11. Jika customer memilih metode cashless, diharuskan mengisi nomer rekening pembayaran
-### 12. Menampilkan detail lengkap pemesanan
+### 9. Menampilkan detail lengkap pemesanan
+### 10. Memilih metode pembayaran antara cash, DANA, dan transfer bank
+### 11. Jika customer memilih metode DANA, diharuskan mengisi nomer DANA dan mengkonfirmasi untuk melakukan pembayaran
+### 12. Jika customer memilih metode transfer bank, diharuskan melakukan transfer ke rekening yang tertera dan mengkonfirmasi pembayaran
 ### 13. Program selesai
