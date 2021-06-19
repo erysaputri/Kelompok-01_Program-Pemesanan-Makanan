@@ -14,6 +14,7 @@ def menuawal():
 menuawal()
 
 
+# noinspection PyGlobalUndefined
 def makanan():
     global list_makanan
     global list_jumlah_makanan
@@ -242,6 +243,7 @@ def makanan():
 makanan()
 
 
+# noinspection PyGlobalUndefined
 def minuman():
     global list_minuman
     global list_jumlah_minuman
@@ -404,6 +406,7 @@ def minuman():
 minuman()
 
 
+# noinspection PyGlobalUndefined
 def total_sementara():
     global total_harga
     total_harga = sum(list_total_makanan) + sum(list_total_minuman)
@@ -434,6 +437,7 @@ def cek_pesanan():
 cek_pesanan()
 
 
+# noinspection PyGlobalUndefined
 def dine_in():
     global nama_pemesan
     global no_meja
@@ -446,6 +450,7 @@ def dine_in():
     print("No Meja : ", no_meja)
 
 
+# noinspection PyGlobalUndefined
 def take_away():
     global nama_pengambil
     global no_antrian
@@ -458,6 +463,7 @@ def take_away():
     print("No Antrian : ", no_antrian)
 
 
+# noinspection PyGlobalUndefined
 def delivery():
     global nama_penerima
     global no_telfon
@@ -490,6 +496,7 @@ def delivery():
         delivery()
 
 
+# noinspection PyGlobalUndefined
 def menu_2():
     global menu
     global pesanan
@@ -526,6 +533,7 @@ def menu_2():
 menu_2()
 
 
+# noinspection PyGlobalUndefined
 def total_bayar():
     global total_bayar
     total_bayar = total_harga + ongkos_kirim
@@ -610,6 +618,7 @@ def cek():
 cek()
 
 
+# noinspection PyGlobalUndefined
 def cashless():
     global no_dana
     print("Masukkan Nomor DANA")
@@ -651,6 +660,7 @@ def rekening():
         print("TIDAK VALID. SILAHKAN COBA LAGI.")
 
 
+# noinspection PyGlobalUndefined
 def pembayaran():
     global bayar
     print("""
